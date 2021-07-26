@@ -1,14 +1,15 @@
-<script src="//cdn.pushbots.com/js/sdk.min.js" type="text/javascript" onload="PB.init()" async></script>
+<script src="https://cdn.pushbots.com/js/sdk.min.js" type="text/javascript" onload="PB.init()" async></script>
+<script src="https://cdn.pushbots.com/js/pushbots-worker.js"</script>
 <script>
 //some default pre init
 var PB = PB || {};PB.q = PB.q || [];PB.events = PB.events || [];
 
 //PushBots ApplicationId (required)
-PB.app_id = "60f2c310e8b1fd4010547615";
+PB.app_id = "60fe78061eb60c52cd718374";
 //Your domain name, must be HTTPS or localhost  (required)
 PB.domain = "https://msux0.github.io";
 //Update and uncomment it if you are using custom safari certificate for your app
-//PB.safari_push_id = "web.com.pushbots.safaripush";
+PB.safari_push_id = "web.com.pushbots.safaripush";
 //****************************************
 
 PB.logging_enabled = true;
