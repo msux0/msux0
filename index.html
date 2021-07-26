@@ -1,5 +1,4 @@
 <script src="https://cdn.pushbots.com/js/sdk.min.js" type="text/javascript" onload="PB.init()" async></script>
-<script src="https://cdn.pushbots.com/js/pushbots-worker.js"</script>
 <script>
 //some default pre init
 var PB = PB || {};PB.q = PB.q || [];PB.events = PB.events || [];
@@ -16,7 +15,7 @@ PB.logging_enabled = true;
 PB.auto_subscribe = true;
 
 //Custom worker and manifest URL
-//PB.worker_url = PB.domain + "/pushbots-worker.js";
+PB.worker_url = PB.domain + "/pushbots-worker.js";
 
 //Welcome notification message
 PB.welcome = {title:"Welcome ",message:"Thanks for subscribing!", url :PB.domain};
