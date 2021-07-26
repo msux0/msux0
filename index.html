@@ -1,21 +1,28 @@
-<html>
-<head>
-<script src="https://sdk.pushy.me/web/1.0.8/pushy-sdk.js"></script>
-<script type="text/javascript" src="https://sdk.pushy.me/web/1.0.8/pushy-service-worker.js"></script>
+<script src="//cdn.pushbots.com/js/sdk.min.js" type="text/javascript" onload="PB.init()" async></script>
 <script>
-// Register visitor's browser for push notifications
-Pushy.register({ appId: '60f4dbd48abb33b02f642ea4' }).then(function (deviceToken) {
-    // Print device token to console
-    console.log('Pushy device token: ' + deviceToken);
+//some default pre init
+var PB = PB || {};PB.q = PB.q || [];PB.events = PB.events || [];
 
-    // Send the token to your backend server via an HTTP GET request
-    //fetch('https://your.api.hostname/register/device?token=' + deviceToken);
+//PushBots ApplicationId (required)
+PB.app_id = "60f2c310e8b1fd4010547615";
+//Your domain name, must be HTTPS or localhost  (required)
+PB.domain = "https://msux0.github.io";
+//Update and uncomment it if you are using custom safari certificate for your app
+//PB.safari_push_id = "web.com.pushbots.safaripush";
+//****************************************
 
-    // Succeeded, optionally do something to alert the user
-}).catch(function (err) {
-    // Handle registration errors
-    console.error(err);
-});
+PB.logging_enabled = true;
+PB.auto_subscribe = true;
+
+//Custom worker and manifest URL
+//PB.worker_url = PB.domain + "/pushbots-worker.js";
+
+//Welcome notification message
+PB.welcome = {title:"Welcome ",message:"Thanks for subscribing!", url :PB.domain};
+
+function sendNotification(){
+      PB.register();
+      PB.q.push(["sendNotification", {title:"Hey ",message:"Why not?", url :"https://msux0.github.io"}]);
+}
+
 </script>
-</head>
-</html>
